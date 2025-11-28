@@ -1,3 +1,12 @@
+// Team:
+// 1. Koushik Rama(G01508456)
+// 2. Abhijith Devulapally(G01520039)
+
+// This Angular component displays all submitted student surveys retrieved from the Spring Boot backend. 
+// It provides features to fetch all surveys from the database, display them in a formatted GMU-themed table, edit an existing survey entry, and delete a survey entry with confirmation. 
+// The component uses SurveyService for backend communication and Angular Router for navigating to the edit form. Loading and error states are included to enhance user experience.
+
+
 import { Component, inject, OnInit } from '@angular/core';
 import { SurveyService } from '../../services/survey';
 import { CommonModule, NgFor } from '@angular/common';

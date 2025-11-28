@@ -1,10 +1,55 @@
-<nav style="padding: 10px; background-color: #f0f0f0; margin-bottom: 20px;">
-  <span style="font-weight: bold; margin-right: 20px;">GMU Student Survey</span>
+<!-- Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) -->
+<!-- This is the main AppPage, it has 2 sections one is Header, then is body section. Based on link selected the body section will bereplaced by the content of that page -->
+ 
+<!-- Header box (logo + navbar placeholder) Common to Home,Survey,All Surveys-->
+  <div class="my-container1">
+    <div class="header-box mb-3">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <img src="CSLogo.png" id="CSLogo" alt="CS Logo" />
 
-  <a routerLink="" style="margin-right: 10px;">Home</a>
-  <a routerLink="/survey" style="margin-right: 10px;">Student Survey</a>
-  <a routerLink="/surveys">List All Surveys</a>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#004522;" id="menu">
+          <div class="container-fluid" id="MenuEle">
+            <ul class="navbar-nav ms-auto">
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  routerLink="/"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  routerLink="/surveys"
+                  routerLinkActive="active"
+                >
+                  All Surveys
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  routerLink="/survey"
+                  routerLinkActive="active"
+                >
+                  Survey
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
 
 <div style="padding: 10px;">
   <router-outlet></router-outlet>

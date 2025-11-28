@@ -1,3 +1,11 @@
+// Team:
+// 1. Koushik Rama (G01508456)
+// 2. Abhijith Devulapally (G01520039)
+
+// This Angular service handles all HTTP communication with the Spring Boot backend. 
+// It provides methods for creating, retrieving, updating, and deleting survey records. 
+// The service formats the likedMost field for transmission and centralizes all API endpoint interactions for the frontend.
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

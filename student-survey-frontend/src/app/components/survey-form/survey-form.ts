@@ -1,3 +1,12 @@
+// Team:
+// 1. Koushik Rama (G01508456)
+// 2. Abhijith Devulapally (G01520039)
+
+// This Angular component provides the student survey form interface for creating and editing survey entries. 
+// It uses a reactive form structure with validation for all required fields, supports checkbox groups, radio buttons, dropdown selections, and text entry. 
+// When an ID is present in the route, the component loads existing survey data and enters edit mode, allowing users to update a previously saved survey. 
+// It uses SurveyService to submit, update, and retrieve survey information from the Spring Boot backend, and Angular Router for navigation.
+
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';

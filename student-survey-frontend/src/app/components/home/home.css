@@ -1,0 +1,44 @@
+/* Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) */
+/* CSS for Home Page */
+.my-container{
+  max-width: 100vh;
+  margin: 0px auto;
+  background: #fff;
+  padding: 25px 25px 10px 25px;
+  border-radius: 0px;
+  box-shadow: var(--box-shadow);
+}
+
+h1{
+  color: var(--gmu-green) !important;
+  margin:0 0 6px 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: bold !important;
+  font-size: calc(1.5rem + 0.5vw) !important;
+}
+
+.lead {
+  background: linear-gradient(90deg, rgba(0,102,51,0.06), rgba(255,204,51,0.06));
+  padding: 10px 15px;
+  border-left: 4px solid var(--gmu-green);
+  border-radius: 4px;
+  font-size: medium;
+  font-family:'QuickSand',sans-serif;
+}
+
+ul li a {
+  font-weight: 600;
+  color: var(--gmu-green);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+h4 {
+  color: var(--gmu-green);
+  margin-top: 15px;
+}

@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039)
+
+This is the global CSS Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root{
+    --gmu-green: #006633;
+    --gmu-yellow: #FFCC33;
+    --page-bg: #e0e0e0; /* light gray body background */
+    --box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    --required-color: #cc0000;
+    --font-stack: "Quicksand", sans-serif;
+    
+  }
+
+  html,body{
+    margin:0;
+    padding:0;
+    font-family: var(--font-stack)!important;
+    font-weight: 450 !important;
+    background: var(--page-bg) !important;
+    color: #222;
+  }

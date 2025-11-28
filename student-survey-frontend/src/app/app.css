@@ -1,0 +1,48 @@
+/* Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) */
+/* Styling for the app.html */
+.my-container1{
+  max-width: 100vh;
+  margin: 0px auto;
+  background: #fff;
+  padding: 25px 25px 10px 25px;
+  border-radius: 0px;
+  box-shadow: var(--box-shadow);
+}
+
+/* header box styling common for all Pages */
+.header-box{
+  border: 5px solid var(--gmu-green);
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 3px 5px 18px 10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,245,245,0.95));
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+#CSLogo{
+  width:45%;
+  height:auto;
+}
+
+#menu{
+  width: 100%;
+  margin-top: 12px;
+}
+
+#MenuEle{
+  justify-content: flex-end !important;
+}
+
+.Title{
+    justify-self: flex-start;
+}
+
+#menu li{
+  padding-right: 5px;
+  list-style-type: none;
+  font-size: 18px;
+}

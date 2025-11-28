@@ -1,71 +1,76 @@
-<div class="container mt-4">
-  <h2>All Student Surveys</h2>
+<!-- Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) -->
+<!-- This is the survey list page, the surveys aare loaded from MySQL database and are listed in a tabular form -->
+<div class="my-container">
 
-  <!-- Loading indicator -->
+  <h1 class="mb-3">All Student Surveys</h1>
   <div *ngIf="loading" class="alert alert-info mt-3">
     Loading surveys...
   </div>
 
-  <!-- Error message -->
   <div *ngIf="errorMessage" class="alert alert-danger mt-3">
     {{ errorMessage }}
   </div>
 
-  <!-- No data -->
-  <div *ngIf="!loading && !errorMessage && surveys.length === 0" class="alert alert-warning mt-3">
+  <div *ngIf="!loading && !errorMessage && surveys.length === 0"
+       class="alert alert-warning mt-3">
     No surveys found.
   </div>
 
-  <!-- Table -->
-  <div *ngIf="!loading && surveys.length > 0" class="table-responsive mt-3">
-    <table class="table table-bordered table-striped table-hover">
-      <thead class="table-light">
-        <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Telephone</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Date of Survey</th>
-          <th>Liked Most</th>
-          <th>Interested In</th>
-          <th>Recommendation</th>
-          <th>Comments</th>
-          <th style="width: 90px;">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let s of surveys">
-            <td>{{ s.id }}</td>
-            <td>{{ s.firstName }}</td>
-            <td>{{ s.lastName }}</td>
-            <td>{{ s.email }}</td>
-            <td>{{ s.telephone }}</td>
-            <td>{{ s.city }}</td>
-            <td>{{ s.state }}</td>
+  <div *ngIf="!loading && surveys.length > 0" class="card shadow-sm mt-3">
+
+    <div class="card-header table-header text-white">
+      <h5 class="mb-0">Survey Records</h5>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table survey-table align-middle mb-0">
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email / Phone</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Liked Most</th>
+            <th>Interested In</th>
+            <th>Recommend</th>
+            <th>Comments</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let s of surveys; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ s.firstName }} {{ s.lastName }}</td>
+            <td>
+              <div><strong>Email:</strong> {{ s.email }}</div>
+              <div><strong>Phone:</strong> {{ s.telephone }}</div>
+            </td>
+            <td>{{ s.city }}, {{ s.state }}</td>
             <td>{{ s.dateOfSurvey }}</td>
             <td>{{ s.likedMost }}</td>
             <td>{{ s.interestedIn }}</td>
             <td>{{ s.recommendation }}</td>
-            <td>{{ s.comments }}</td>
-            <td>
-                <button
-                    class="btn btn-sm btn-primary me-1"
-                    (click)="onEdit(s.id)">
-                    Edit
-                </button>
+            <td class="text-break">{{ s.comments }}</td>
 
-                <button
-                    class="btn btn-sm btn-danger"
-                    (click)="onDelete(s.id)">
-                    Delete
-                </button>
+            <td class="text-center">
+              <button class="action-btn edit-btn" (click)="onEdit(s.id)">
+                ✏️ Edit
+              </button>
+              <button class="action-btn delete-btn" (click)="onDelete(s.id)">
+                🗑️ Delete
+              </button>
             </td>
+          </tr>
+        </tbody>
 
-        </tr>
-      </tbody>
-    </table>
+      </table>
+    </div>
+
   </div>
+
 </div>

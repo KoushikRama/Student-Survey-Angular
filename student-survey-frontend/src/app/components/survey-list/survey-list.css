@@ -1,0 +1,96 @@
+/* Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) */
+/* Only the survey list “page” area */
+.my-container{
+  max-width: 100vh;
+  margin: 0px auto;
+  background: #fff;
+  padding: 25px 25px 10px 25px;
+  border-radius: 0px;
+  box-shadow: var(--box-shadow);
+}
+
+h1{
+  color: var(--gmu-green) !important;
+  margin:0 0 6px 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: bold !important;
+  font-size: calc(1.5rem + 0.5vw) !important;
+}
+
+/* Match global GMU styling */
+.table-header {
+  background-color: var(--gmu-green);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+/* Table styling */
+.survey-table {
+  width: 100%;
+  border-spacing: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.survey-table thead th {
+  background: rgba(0, 66, 33, 0.15);
+  color: #003319;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 2px solid #006633;
+}
+
+.survey-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 189, 95, 0.05);
+}
+
+.survey-table tbody tr:hover {
+  background-color: rgba(255,204,51,0.25);
+  transition: 0.2s ease;
+}
+
+.survey-table td, .survey-table th {
+  padding: 5px 12px;
+  vertical-align: middle;
+}
+
+/* Action Buttons */
+.action-btn {
+  border: none;
+  padding: 6px 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  margin: 2px;
+  display: inline-block;
+}
+
+.edit-btn {
+  background: #FFCC33;
+  color: #000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.edit-btn:hover {
+  background: #e6b82e;
+}
+
+.delete-btn {
+  background: #cc0000;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.delete-btn:hover {
+  background: #a30000;
+}

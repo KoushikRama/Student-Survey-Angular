@@ -1,282 +1,273 @@
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
+<!-- Team:
+1. Koushik Rama(G01508456)
+2. Abhijith Devulapally(G01520039) -->
 
-      <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-          <h4 class="mb-0">Student Survey Form</h4>
+<!-- This is the survey form page -->
+
+<div class="my-container">
+
+  <section>
+    <!-- Greeting + intro text -->
+    <div id="greeting" class="greeting mb-2">
+      Welcome, prospective student!
+    </div>
+
+    <p class="Thank">
+      Thank you for visiting the Computer Science Department. We hope you enjoyed
+      your experience on campus. If you are a prospective student, please take a
+      few moments to complete our survey. Your feedback is valuable and helps us
+      improve our programs and campus experience.
+    </p>
+
+    <h1>Prospective Student Survey</h1>
+    <p>Please provide your feedback about your campus visit.</p>
+
+    <!-- Angular Reactive Form -->
+    <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()" autocomplete="on">
+
+      <!-- Name + Contact row (similar to my previous assignment layout) -->
+      <div class="row mb-1" id="row">
+        <div class="col-1">
+          <label class="form-label required">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+            placeholder="Koushik" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('firstName')?.touched && surveyForm.get('firstName')?.invalid">
+            First name is required.
+          </div>
+
+          <label class="form-label required mt-2">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            placeholder="Rama" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('lastName')?.touched && surveyForm.get('lastName')?.invalid">
+            Last name is required.
+          </div>
         </div>
 
-        <div class="card-body">
-          <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+        <div class="col-2">
+          <label class="form-label required">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="name@example.edu" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('email')?.touched && surveyForm.get('email')?.invalid">
+            Valid email is required.
+          </div>
 
-            <!-- Row 1: First & Last Name -->
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label class="form-label">First Name *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="firstName"
-                  placeholder="Enter first name">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('firstName')?.touched && surveyForm.get('firstName')?.invalid">
-                  First name is required.
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Last Name *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="lastName"
-                  placeholder="Enter last name">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('lastName')?.touched && surveyForm.get('lastName')?.invalid">
-                  Last name is required.
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 2: Email & Telephone -->
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label class="form-label">Email *</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  formControlName="email"
-                  placeholder="name@example.com">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('email')?.touched && surveyForm.get('email')?.invalid">
-                  Valid email is required.
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Telephone *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="telephone"
-                  placeholder="Phone number">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('telephone')?.touched && surveyForm.get('telephone')?.invalid">
-                  Telephone is required.
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 3: Street Address -->
-            <div class="mb-3">
-              <label class="form-label">Street Address *</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="streetAddress"
-                placeholder="Street address">
-              <div
-                class="text-danger small"
-                *ngIf="surveyForm.get('streetAddress')?.touched && surveyForm.get('streetAddress')?.invalid">
-                Street address is required.
-              </div>
-            </div>
-
-            <!-- Row 4: City, State, Zip -->
-            <div class="row mb-3">
-              <div class="col-md-4">
-                <label class="form-label">City *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="city"
-                  placeholder="City">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('city')?.touched && surveyForm.get('city')?.invalid">
-                  City is required.
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <label class="form-label">State *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="state"
-                  placeholder="State">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('state')?.touched && surveyForm.get('state')?.invalid">
-                  State is required.
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <label class="form-label">Zip Code *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="zip"
-                  placeholder="Zip">
-                <div
-                  class="text-danger small"
-                  *ngIf="surveyForm.get('zip')?.touched && surveyForm.get('zip')?.invalid">
-                  Zip is required.
-                </div>
-              </div>
-            </div>
-
-            <!-- Date of Survey -->
-            <div class="mb-3">
-              <label class="form-label">Date of Survey *</label>
-              <input
-                type="date"
-                class="form-control"
-                formControlName="dateOfSurvey">
-              <div
-                class="text-danger small"
-                *ngIf="surveyForm.get('dateOfSurvey')?.touched && surveyForm.get('dateOfSurvey')?.invalid">
-                Date of survey is required.
-              </div>
-            </div>
-
-            <hr>
-
-            <!-- What did you like most (Checkboxes) -->
-            <div class="mb-3">
-              <label class="form-label">
-                What did you like most about the campus? (Select all that apply)
-              </label>
-
-              <div class="row">
-                <div class="col-md-6" *ngFor="let option of likedMostOptions">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      [checked]="likedMostFormArray.value.includes(option)"
-                      (change)="onLikedMostChange(option, $event)"
-                      id="likedMost_{{ option }}">
-                    <label class="form-check-label" [for]="'likedMost_' + option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- How did you become interested? (Radio Buttons) -->
-            <div class="mb-3">
-              <label class="form-label">How did you become interested in the university? *</label>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  formControlName="interestedIn"
-                  value="Friends"
-                  id="interested_friends">
-                <label class="form-check-label" for="interested_friends">
-                  Friends
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  formControlName="interestedIn"
-                  value="TV"
-                  id="interested_tv">
-                <label class="form-check-label" for="interested_tv">
-                  Television
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  formControlName="interestedIn"
-                  value="Internet"
-                  id="interested_internet">
-                <label class="form-check-label" for="interested_internet">
-                  Internet
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  formControlName="interestedIn"
-                  value="Other"
-                  id="interested_other">
-                <label class="form-check-label" for="interested_other">
-                  Other
-                </label>
-              </div>
-
-              <div
-                class="text-danger small"
-                *ngIf="surveyForm.get('interestedIn')?.touched && surveyForm.get('interestedIn')?.invalid">
-                Please select how you became interested.
-              </div>
-            </div>
-
-            <!-- Recommendation (Dropdown) -->
-            <div class="mb-3">
-              <label class="form-label">Likelihood of recommending this school *</label>
-              <select class="form-select" formControlName="recommendation">
-                <option value="">-- Select --</option>
-                <option value="Very Likely">Very Likely</option>
-                <option value="Likely">Likely</option>
-                <option value="Unlikely">Unlikely</option>
-              </select>
-              <div
-                class="text-danger small"
-                *ngIf="surveyForm.get('recommendation')?.touched && surveyForm.get('recommendation')?.invalid">
-                Please select a recommendation level.
-              </div>
-            </div>
-
-            <!-- Comments -->
-            <div class="mb-3">
-              <label class="form-label">Additional Comments</label>
-              <textarea
-                class="form-control"
-                formControlName="comments"
-                rows="3"
-                placeholder="Enter any additional comments here"></textarea>
-            </div>
-
-            <!-- Buttons -->
-            <div class="d-flex justify-content-end gap-2">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                (click)="surveyForm.reset()">
-                Cancel
-              </button>
-
-              <button
-                type="submit"
-                class="btn btn-primary"
-                [disabled]="surveyForm.invalid">
-                Submit
-              </button>
-            </div>
-
-          </form>
+          <label class="form-label mt-2">Telephone</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="telephone"
+            placeholder="123-456-7890" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('telephone')?.touched && surveyForm.get('telephone')?.invalid">
+            Telephone is required.
+          </div>
         </div>
       </div>
 
-    </div>
-  </div>
+      <label class="form-label mt-2">Street Address</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="streetAddress"
+        placeholder="123 Main St" />
+      <div class="text-danger small"
+            *ngIf="surveyForm.get('streetAddress')?.touched && surveyForm.get('streetAddress')?.invalid">
+        Street address is required.
+      </div>
+
+      <!-- City / State / Zip row -->
+      <div class="row mb-1" id="row">
+        <div class="col-1">
+          <label class="form-label required">City</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="city"
+            placeholder="Fairfax" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('city')?.touched && surveyForm.get('city')?.invalid">
+            City is required.
+          </div>
+        </div>
+
+        <div class="col-1">
+          <label class="form-label required">State</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="state"
+            placeholder="VA" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('state')?.touched && surveyForm.get('state')?.invalid">
+            State is required.
+          </div>
+        </div>
+
+        <div class="col-1">
+          <label class="form-label required">Zip</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="zip"
+            placeholder="22030" />
+          <div class="text-danger small"
+               *ngIf="surveyForm.get('zip')?.touched && surveyForm.get('zip')?.invalid">
+            Zip is required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Date of Survey -->
+      <div class="mb-1">
+        <label class="form-label required">Date of Survey</label>
+        <input
+          type="date"
+          class="form-control date-input"
+          formControlName="dateOfSurvey" />
+        <div class="text-danger small"
+             *ngIf="surveyForm.get('dateOfSurvey')?.touched && surveyForm.get('dateOfSurvey')?.invalid">
+          Date of survey is required.
+        </div>
+      </div>
+
+      <!-- Liked Most (checkbox) -->
+      <div class="mb-1">
+        <p class="form-legend">What did you like most about the campus?</p>
+        <div class="checkbox">
+          <div class="form-check" *ngFor="let option of likedMostOptions">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [checked]="likedMostFormArray.value.includes(option)"
+              (change)="onLikedMostChange(option, $event)"
+              id="likedMost_{{ option }}">
+            <label class="form-check-label" [for]="'likedMost_' + option">
+              {{ option }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interested In (radio) -->
+      <div class="mb-1">
+        <p class="form-legend">How did you become interested in the university?</p>
+        <div class="radio">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="interestedIn"
+              value="Friends"
+              id="interest_friends">
+            <label class="form-check-label" for="interest_friends">
+              Friends
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="interestedIn"
+              value="Television"
+              id="interest_tv">
+            <label class="form-check-label" for="interest_tv">
+              Television
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="interestedIn"
+              value="Internet"
+              id="interest_internet">
+            <label class="form-check-label" for="interest_internet">
+              Internet
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="interestedIn"
+              value="Other"
+              id="interest_other">
+            <label class="form-check-label" for="interest_other">
+              Other
+            </label>
+          </div>
+        </div>
+
+        <div class="text-danger small"
+             *ngIf="surveyForm.get('interestedIn')?.touched && surveyForm.get('interestedIn')?.invalid">
+          Please select how you became interested.
+        </div>
+      </div>
+
+      <!-- Recommendation -->
+      <div class="mb-1">
+        <label class="form-label required">Likelihood to recommend our University</label>
+        <select class="form-select" formControlName="recommendation">
+          <option value="">-- choose --</option>
+          <option value="Very Likely">Very Likely</option>
+          <option value="Likely">Likely</option>
+          <option value="Unlikely">Unlikely</option>
+        </select>
+        <div class="text-danger small"
+             *ngIf="surveyForm.get('recommendation')?.touched && surveyForm.get('recommendation')?.invalid">
+          Please select a recommendation level.
+        </div>
+      </div>
+
+      <!-- Comments -->
+      <div class="mb-3">
+        <label class="form-label">Additional Comments</label>
+        <textarea
+          class="form-control"
+          formControlName="comments"
+          rows="4"
+          placeholder="Would you like to share anything more.."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-3 flex-wrap">
+        <button
+          type="submit"
+          class="submit-btn"
+          [disabled]="surveyForm.invalid">
+          Submit
+        </button>
+        <button
+          type="button"
+          class="reset-btn"
+          (click)="surveyForm.reset()">
+          Reset
+        </button>
+      </div>
+
+      <div class="required-note mt-2">
+        Fields marked with * are required.
+      </div>
+    </form>
+
+    <footer class="mt-3">
+      <p>Computer Science Department • George Mason University</p>
+    </footer>
+
+  </section>
 </div>
