@@ -1,3 +1,9 @@
+// Team:
+// 1. Koushik Rama(G01508456)
+// 2. Abhijith Devulapally(G01520039)
+
+// Bootstraps and runs the Spring Boot backend that powers the survey management system.
+
 package com.example.studentsurveybackend;
 
 import org.springframework.boot.SpringApplication;

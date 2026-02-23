@@ -1,3 +1,9 @@
+// Team:
+// 1. Koushik Rama(G01508456)
+// 2. Abhijith Devulapally(G01520039)
+// Exposes REST API endpoints for managing surveys and handles HTTP requests from the Angular frontend.
+
+
 package com.example.studentsurveybackend.controller;
 
 import com.example.studentsurveybackend.entity.Survey;

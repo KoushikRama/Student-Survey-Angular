@@ -1,3 +1,8 @@
+// Team:
+// 1. Koushik Rama(G01508456)
+// 2. Abhijith Devulapally(G01520039)
+// Represents the Survey entity mapped to the database table and includes validation rules for all survey fields.
+
 package com.example.studentsurveybackend.entity;
 
 import jakarta.persistence.*;

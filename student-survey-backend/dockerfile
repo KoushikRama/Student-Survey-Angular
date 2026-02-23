@@ -1,0 +1,23 @@
+#------------- build stage --------------
+#Use the image that has maven and java 17 
+FROM maven:3.9-eclipse-temurin-17 AS build
+# working directory for container
+WORKDIR /app
+# copy pom.xml into /app
+COPY pom.xml .
+# copy all source code into /app/src
+COPY src ./src
+# Runs inside the container , what maven does: Downloads dependencies, compiles java, packages spring boot app , creates target/my-app.jar 
+RUN mvn -DskipTests package
+
+#------------- run stage ---------------
+# start a new image that only has: jre , no maven, no build tools, to keep the final image ready
+FROM eclipse-temurin:17-jre
+# working directory for container
+WORKDIR /app
+# copy the build jar file to new container
+COPY --from=build /app/target/*.jar app.jar
+# tell docker, this app listens on port 8080
+EXPOSE 8080
+# container start command, when container starts run, java -jar app.jar , which starts spring boot server
+CMD ["java","-jar","app.jar"]

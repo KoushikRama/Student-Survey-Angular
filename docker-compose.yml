@@ -1,0 +1,29 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: survey-mysql
+    environment:
+      MYSQL_DATABASE: surveydb
+      MYSQL_ROOT_PASSWORD: admin123
+    ports:
+      - "3307:3306"
+
+  backend:
+    build: ./student-survey-backend
+    container_name: survey-backend
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/surveydb"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+    depends_on:
+      - db 
+  frontend:
+    build: ./student-survey-frontend
+    container_name: survey-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend

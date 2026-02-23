@@ -1,3 +1,10 @@
+// Team:
+// 1. Koushik Rama(G01508456)
+// 2. Abhijith Devulapally(G01520039)
+
+// Contains business logic for creating, retrieving, updating, and deleting Survey records.
+
+
 package com.example.studentsurveybackend.service;
 
 import com.example.studentsurveybackend.entity.Survey;
